@@ -868,7 +868,7 @@ MIT License - see LICENSE file for details
 
 ## Changelog
 
-### Version 1.1.2 (Current)
+### Version 1.1.3 (Current)
 
 - Initial release
 - JWT authentication with refresh tokens

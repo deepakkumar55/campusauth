@@ -1,7 +1,7 @@
 {
   "name": "campusauth",
-  "version": "1.1.2",
-  "description": "Simple, Secure, Scalable Authentication for Modern JavaScript Apps",
+  "version": "1.1.3",
+  "description": "Simple, Secure, and Scalable Authentication for Modern JavaScript Applications including Next.js and Express.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
@@ -20,9 +20,15 @@
     "mongodb",
     "passport",
     "auth",
-    "security"
+    "security",
+    "typescript",
+    "nodejs"
   ],
-  "author": "CampusAuth Team",
+  "author": {
+    "name": "CampusAuth Team",
+    "email": "contact@thecampuscoders.tech",
+    "url": "https://thecampuscoders.tech"
+  },
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -33,9 +39,9 @@
   },
   "homepage": "https://github.com/deepakkumar55/campusauth#readme",
   "peerDependencies": {
-    "express": "^4.18.0",
-    "mongoose": "^7.0.0 || ^8.0.0",
-    "next": "^13.0.0 || ^14.0.0"
+    "express": ">=4.18.0",
+    "mongoose": ">=7.0.0 <9.0.0",
+    "next": ">=13.0.0 <17.0.0"
   },
   "dependencies": {
     "bcrypt": "^5.1.1",
@@ -58,5 +64,11 @@
     "dist",
     "README.md",
     "LICENSE"
-  ]
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
 }
