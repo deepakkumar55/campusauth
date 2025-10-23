@@ -5,17 +5,20 @@ export interface IUser {
   name: string;
   email: string;
   password?: string;
-  provider?: string;
-  role: string;
+  provider?: 'local' | 'google' | 'github' | 'linkedin';
+  role: 'user' | 'admin' | 'moderator';
   refreshToken?: string;
   createdAt?: Date;
   updatedAt?: Date;
+  toJSON?: () => any;
 }
 
 export interface JWTPayload {
   id: string;
   email?: string;
   role?: string;
+  iat?: number;
+  exp?: number;
 }
 
 export interface AuthRequest extends Request {
@@ -65,4 +68,19 @@ export interface ApiResponse<T = any> {
   message?: string;
   data?: T;
   error?: string;
+}
+
+export interface ValidationResult {
+  valid: boolean;
+  message?: string;
+  missing?: string[];
+}
+
+export interface AuthContextType {
+  user: IUser | null;
+  loading: boolean;
+  login: (email: string, password: string) => Promise<{ success: boolean; error?: string }>;
+  register: (name: string, email: string, password: string) => Promise<{ success: boolean; error?: string }>;
+  logout: () => Promise<void>;
+  refreshToken: () => Promise<boolean>;
 }
